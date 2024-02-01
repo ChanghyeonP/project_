@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .sticky-top {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: white;
+        }
+
+        .sticky-bottom {
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
+            background: white;
+        }
+
+        .scrollable-menu {
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .photo-button {
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="sticky-top flex justify-between items-center px-4 py-2 shadow-md">
+        <div class="flex space-x-2">
+            <button class="bg-blue-500 text-white px-3 py-1 rounded">DU car_pool</button>
+            <button class="bg-blue-500 text-white px-3 py-1 rounded">login / join</button>
+        </div>
+        <div>I'll use it as an advertisement window later</div>
+    </div>
+
+    <div class="api_test_box container mx-auto px-5 py-6">
+        <div class="api_ground bg-white p-4 my-4 rounded shadow-lg">
+            <div id="map" style="width:100%;height:350px;"></div>
+            <script type="text/javascript"
+                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=236568aeb3b812fccb1bc92148683a54"></script>
+            <script>
+                var mapContainer = document.getElementById('map'),
+                    // 지도를 표시할 div 
+                    mapOption = {
+                        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                    };
+
+                // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                var map = new kakao.maps.Map(mapContainer, mapOption); 
+            </script>
+        </div>
+    </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-2">
+        <div class="scrollable-menu bg-white p-4 my-4 rounded shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <div class="bg-gray-200 p-4 rounded">car 목적지 9 : 30 - 10 : 00</div>
+                <div class="bg-gray-200 p-4 rounded">car 목적지 9 : 30 - 10 : 00</div>
+                <div class="bg-gray-200 p-4 rounded">car 목적지 9 : 30 - 10 : 00</div>
+                <div class="bg-gray-200 p-4 rounded">car 목적지 9 : 30 - 10 : 00</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="photo-button" style="background-image: url('https://source.unsplash.com/random/400x300');">
+                <button class="w-full h-full"></button>
+                <p class="text-center">car_pool</p>
+            </div>
+            <div class="photo-button" style="background-image: url('https://source.unsplash.com/random/400x300');">
+                <button class="w-full h-full"></button>
+                <p class="text-center">taxi</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sticky-bottom flex justify-around items-center px-4 py-2 shadow-md">
+        <button class="bg-blue-500 text-white px-3 py-1 rounded">home</button>
+        <button class="bg-blue-500 text-white px-3 py-1 rounded">chat</button>
+        <button class="bg-blue-500 text-white px-3 py-1 rounded">community</button>
+    </div>
+
+    <script>
+  // Implement any additional JavaScript if needed
+    </script>
+</body>
+
+</html>
