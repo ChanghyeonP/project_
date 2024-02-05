@@ -1,0 +1,67 @@
+/* 추가된 CSS 파일 */
+
+/* Additional CSS if needed */
+.scrollable-menu {
+    overflow-y: auto;
+    max-height: 300px;
+    /* Adjust based on the design */
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.icon-button {
+    width: 100px;
+    height: 100px;
+}
+
+.banner-title {
+    font-weight: 700;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* 추가된 스타일들 */
+.api_ground {
+    background-color: white;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#map {
+    width: 100%;
+    height: 350px;
+}
+
+/* 여기서부터는 원래의 CSS 스타일이 복사됩니다. 필요에 따라 수정하세요. */
+.container {
+    /* ... */
+}
+
+.bg-white {
+    /* ... */
+}
+
+.px-5 {
+    /* ... */
+}
+
+/* 나머지 스타일들도 필요에 따라 추가 혹은 수정 가능합니다. */

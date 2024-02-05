@@ -1,47 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./login.css">
-</head>
-<body>
-    <div class="container right-panel-active">
-        <!-- Sign Up -->
-        <div class="container__form container--signup">
-            <form action="#" class="form" id="form1">
-            <h2 class="form__title">회원가입</h2>
-            <input type="text" placeholder="User" class="input" />
-            <input type="email" placeholder="Email" class="input" />
-            <input type="password" placeholder="Password" class="input" />
-            <button class="btn">회원가입</button>
-            </form>
-        </div>
+    <title>DU Car Pool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional CSS if needed */
+        .scrollable-menu {
+            overflow-y: auto;
+            max-height: 300px;
+            /* Adjust based on the design */
+        }
 
-        <!-- Sign In -->
-        <div class="container__form container--signin">
-            <form action="#" class="form" id="form2">
-            <h2 class="form__title">Sign In</h2>
-            <input type="email" placeholder="Email" class="input" />
-            <input type="password" placeholder="Password" class="input" />
-            <a href="#" class="link">Forgot your password?</a>
-            <button class="btn">로그인</button>
-            </form>
-        </div>
-        <!-- Overlay -->
-        <div class="container__overlay">
-            <div class="overlay">
-            <div class="overlay__panel overlay--left">
-                <button class="btn" id="signIn">로그인</button>
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .icon-button {
+            width: 100px;
+            height: 100px;
+        }
+
+        .banner-title {
+            font-weight: 700;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-white font-roboto; display : block ">
+    <div>
+        <header class="fixed-top bg-white shadow-md">
+            <div class="flex justify-between items-center p-4">
+                <span class="banner-title text-xl">DU car_pool</span>
+                <div class="flex items-center">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded mr-2">login</button>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded">join</button>
+                    <button class="px-4 py-2 ml-4 bg-gray-200">---</button>
+                </div>
             </div>
-            <div class="overlay__panel overlay--right">
-                <button class="btn" id="signUp">회원가입</button>
-            </div>
-            </div>
+        </header>
+    </div>
+
+    <div class="checkbox_container mt-20"
+        style="display: block; border: 1px solid rgb(121, 113, 113); padding: 10px; width:95%; margin-left: auto; margin-right: auto;">
+        나의 예약<br>
+        <div>
+            <input type='checkbox' name='gender' value='female' style="margin-right: 5px;" />신청시간
+            <br>
+            <input type='checkbox' name='gender' value='male' style="margin-right: 5px;" />예약시간
         </div>
+    </div>
+
+    </div>
+
+
+    <main class="pb-20">
+        <div style="color: gray; margin-top:10px; margin-right:20px; text-align:right;">only [car_pool / taxi] </div>
+        <section class="scrollable-menu p-4">
+            <!-- Scrollable menu items -->
+            <div class="list-item">
+                <div style="width : 50%; float: left;">9 : 30 - 10 : 00</div>
+                <div style="width : 30%; float: left;">영대</div>
+                <div style="width : 5%; float: right;">car</div>
+            </div>
+            <div class="list-item">
+                <div style="width : 50%; float: left;">9 : 40 - 10 : 00</div>
+                <div style="width : 30%; float: left;">하양</div>
+                <div style="width : 5%; float: right;">car</div>
+            </div>
+            <div class="list-item">
+                <div style="width : 50%; float: left;">9 : 45 - 9 : 50</div>
+                <div style="width : 30%; float: left;">동성로</div>
+                <div style="width : 5%; float: right;">taxi</div>
+            </div>
+            <div class="list-item">
+                <div style="width : 50%; float: left;">10 : 00 - 10 : 30</div>
+                <div style="width : 30%; float: left;">경일대</div>
+                <div style="width : 5%; float: right;">taxi</div>
+            </div>
+            <div class="list-item">
+                <div style="width : 50%; float: left;">10 : 00 - 10 : 40</div>
+                <div style="width : 30%; float: left;">대가대</div>
+                <div style="width : 5%; float: right;">car</div>
+            </div>
+            <div class="list-item">
+                <div style="width : 50%; float: left;">10 : 00 - 10 : 40</div>
+                <div style="width : 30%; float: left;">대가대</div>
+                <div style="width : 5%; float: right;">car</div>
+            </div>
+            <div class="list-item">
+                <div style="width : 50%; float: left;">10 : 00 - 10 : 40</div>
+                <div style="width : 30%; float: left;">대가대</div>
+                <div style="width : 5%; float: right;">car</div>
+            </div>
+
+            <!-- Repeat for each item -->
+        </section>
+
+        <section class="flex justify-between p-4">
+            <button class="flex-1 mr-2 bg-gray-200 p-4">
+                <img src="Car.jpeg" style="width : 100%">
+                <p style="font-size: 15px;">car_pool</p>
+            </button>
+
+            <button class="flex-1 ml-2 bg-gray-200 p-4 text-center">taxi</button>
+        </section>
+    </main>
+
+    <footer class="fixed-bottom bg-white shadow-inner">
+        <div class="flex justify-around items-center p-4">
+            <button class="text-center">home</button>
+            <button class="text-center">chat</button>
+            <button class="text-center">community</button>
         </div>
-        <script type =" text/javascript" src="login.js"> </script>
+    </footer>
+
+    <script>
+  // JavaScript if needed
+    </script>
 </body>
+
 </html>
