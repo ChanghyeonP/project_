@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col h-screen">
+    <header class="fixed-top bg-white shadow-md">
+        <div class="flex justify-between items-center p-4">
+            <span class="banner-title text-xl">DU car_pool</span>
+            <div class="flex items-center">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded mr-2">login</button>
+                <button class="px-4 py-2 bg-green-500 text-white rounded">join</button>
+                <button class="px-4 py-2 ml-4 bg-gray-200">---</button>
+            </div>
+        </div>
+    </header>
+    <main class="flex-1 overflow-y-auto p-4">
+        <div id="chat" class="flex flex-col space-y-2">
+            <!-- 채팅 메시지가 여기에 동적으로 추가됩니다 -->
+        </div>
+    </main>
+    <div class="p-4">
+        <input type="text" id="messageInput" class="border p-2" placeholder="Type your message here..." style ="width:95%"/>
+        <button id="sendButton" class="bg-blue-500 text-white p-2 mt-2">Send</button>
+    </div>
+    <footer class="fixed-bottom bg-white shadow-inner">
+        <div class="flex justify-around items-center p-4">
+            <button class="text-center">home</button>
+            <button class="text-center">chat</button>
+            <button class="text-center">community</button>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sendButton = document.getElementById('sendButton');
+            const messageInput = document.getElementById('messageInput');
+            const chat = document.getElementById('chat');
+
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message) {
+                    const messageElement = document.createElement('div');
+                    messageElement.textContent = message;
+                    messageElement.classList.add('bg-gray-100', 'p-2', 'rounded', 'self-end');
+                    chat.appendChild(messageElement);
+                    messageInput.value = ''; // 입력 필드를 비웁니다.
+                    chat.scrollTop = chat.scrollHeight; // 채팅 창을 맨 아래로 스크롤합니다.
+                }
+            }
+
+            sendButton.addEventListener('click', sendMessage);
+
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
